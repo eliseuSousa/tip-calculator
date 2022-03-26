@@ -72,10 +72,8 @@ section.container
   div.comandos
   div.tipo-porcentagem
   button.botao {
-  background: var(--very-dark-cyan);
   border: none;
   border-radius: 5px;
-  color: var(--white);
   font-family: "Space Mono", monospace;
   font-size: 2rem;
   font-weight: 700;
@@ -88,7 +86,16 @@ section.container
   div.calculadora-gorjeta
   div.comandos
   div.tipo-porcentagem
-  button.botao:hover {
+  button.padrao {
+  color: var(--white);
+  background: var(--very-dark-cyan);
+}
+
+section.container
+  div.calculadora-gorjeta
+  div.comandos
+  div.tipo-porcentagem
+  button.clicked {
   background: var(--strong-cyan);
   color: var(--very-dark-cyan);
 }
@@ -193,4 +200,5 @@ section.container div.calculadora-gorjeta div.display button.botao-reset {
 }
 
 section.container div.calculadora-gorjeta div.display button.botao-reset:hover {
+  background: ;
 }
