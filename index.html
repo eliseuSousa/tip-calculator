@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Tip calculator app</title>
+  <link rel="stylesheet" href="./assets/css/global.css">
+  <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+
+<body>
+  <section class="container">
+    <img src="./assets/images/logo.svg" alt="Imagem Logo" class="logo">
+    <div class="calculadora-gorjeta">
+      <div class="comandos">
+
+        <div class="bill">
+          <h1 class="texto">Bill</h1>
+          <input type="text" class="campo-input">
+        </div>
+
+        <div class="tipo-porcentagem">
+          <h2 class="texto">Select Tip %</h2>
+          <ul class="porcentagens">
+            <li class="porcentagem">
+              <button class="botao">5%</button>
+            </li>
+            <li class="porcentagem">
+              <button class="botao">10%</button>
+            </li>
+            <li class="porcentagem">
+              <button class="botao">15%</button>
+            </li>
+            <li class="porcentagem">
+              <button class="botao">25%</button>
+            </li>
+            <li class="porcentagem">
+              <button class="botao">50%</button>
+            </li>
+            <li class="porcentagem">
+              <input type="text" placeholder="Custom" class="campo-input porcentagem-custom">
+            </li>
+          </ul>
+        </div>
+
+        <div class="numero-pessoas">
+          <h2 class="texto">Number of People</h2>
+          <input type="text"  class="campo-input">
+        </div>
+      </div>
+
+      <div class="display">
+
+        <div class="resultado">
+          <div class="display-dados">
+            <div class="descricao">
+              <h2>Tip Amount</h2>
+              <p>/ person</p>
+            </div>
+  
+            <div class="amount__display">
+              <h3 class="tip-amount">$0.00</h3>
+            </div>
+          </div>
+  
+          <div class="display-dados">
+            <div class="descricao">
+              <h2>Total</h2>
+              <p>/ person</p>
+            </div>
+  
+            <div class="total__display">
+              <h3 class="valor-total">$0.00</h3>
+            </div>
+          </div>
+        </div>
+
+        <button class="botao-reset">Reset</button>
+      </div>
+
+    </div>
+  </section>
+  <!-- Bill
+
+  Select Tip %
+  5%
+  10%
+  15%
+  25%
+  50%
+  Custom
+
+  Number of People
+
+  Tip Amount
+  / person
+
+  Total
+  / person
+
+  Reset -->
+  
+  <!-- <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Your Name Here</a>.
+  </div> -->
+</body>
+</html>

@@ -1,0 +1,48 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --strong-cyan: hsl(172, 67%, 45%);
+  --very-dark-cyan: hsl(183, 100%, 15%);
+  --dark-grayish-cyan: hsl(186, 14%, 43%);
+  --grayish-cyan: hsl(184, 14%, 56%);
+  --light-grayish-cyan: hsl(185, 41%, 84%);
+  --very-light-grayish-cyan: hsl(189, 41%, 97%);
+  --white: hsl(0, 0%, 100%);
+}
+
+html {
+  font-family: "Space Mono", monospace;
+  font-size: 62.5%;
+  font-weight: 700;
+}
+
+.texto {
+  color: var(--dark-grayish-cyan);
+  font-size: 1.4rem;
+  margin-bottom: 5px;
+}
+
+.campo-input {
+  background-color: var(--very-light-grayish-cyan);
+  border: none;
+  border-radius: 4px;
+  color: var(--very-dark-cyan);
+  font-size: 1.6rem;
+  font-weight: 700;
+  padding: 4px 8px;
+  width: 100%;
+  transition: all 0.3s;
+}
+.campo-input:hover {
+  border: 1px solid var(--strong-cyan);
+}
+
+.campo-input:focus {
+  outline: 0;
+}
