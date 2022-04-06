@@ -26,15 +26,21 @@ section.container div.calculadora-gorjeta div.comandos {
   margin-right: 25px;
 }
 
+section.container div.calculadora-gorjeta div.comandos div.bill, section.container div.calculadora-gorjeta div.comandos div.numero-pessoas {
+  position: relative;
+}
+
+section.container div.calculadora-gorjeta div.comandos div.bill img.logo-dolar, section.container div.calculadora-gorjeta div.comandos div.numero-pessoas img.logo-numero-pessoas{
+  position: absolute;
+  left: 8px;
+  top: 32px;
+}
+
 section.container div.calculadora-gorjeta div.comandos div.bill,
 div.tipo-porcentagem {
   margin-bottom: 25px;
 }
 
-section.container div.calculadora-gorjeta div.comandos div.bill input {
-  background: var(--very-light-grayish-cyan) url("../images/icon-dollar.svg")
-    no-repeat left center;
-}
 
 section.container div.calculadora-gorjeta div.comandos ul.porcentagens {
   display: flex;
@@ -109,14 +115,6 @@ section.container
   height: 35px;
 }
 
-section.container
-  div.calculadora-gorjeta
-  div.comandos
-  div.numero-pessoas
-  input {
-  background: var(--very-light-grayish-cyan) url("../images/icon-person.svg")
-    no-repeat left center;
-}
 
 section.container div.calculadora-gorjeta div.display {
   background: var(--very-dark-cyan);
@@ -191,14 +189,15 @@ section.container
 }
 
 section.container div.calculadora-gorjeta div.display button.botao-reset {
-  background: var(--strong-cyan);
+  background: var(--dark-grayish-cyan);
   border: none;
   border-radius: 4px;
   font-weight: 700;
   text-transform: uppercase;
   padding: 10px 0;
+  transition: all .3s;
 }
 
 section.container div.calculadora-gorjeta div.display button.botao-reset:hover {
-  background: ;
+  background: var(--light-grayish-cyan);
 }

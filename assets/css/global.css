@@ -30,7 +30,7 @@ html {
 
 .campo-input {
   background-color: var(--very-light-grayish-cyan);
-  border: none;
+  border: 2px solid var(--very-light-grayish-cyan);
   border-radius: 4px;
   color: var(--very-dark-cyan);
   font-size: 1.6rem;
@@ -40,7 +40,7 @@ html {
   transition: all 0.3s;
 }
 .campo-input:hover {
-  border: 1px solid var(--strong-cyan);
+  border: 2px solid var(--strong-cyan);
 }
 
 .campo-input:focus {
