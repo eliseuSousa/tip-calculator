@@ -101,7 +101,7 @@ section.container
   div.calculadora-gorjeta
   div.comandos
   div.tipo-porcentagem
-  button.clicked {
+  button.focus {
   background: var(--strong-cyan);
   color: var(--very-dark-cyan);
 }
