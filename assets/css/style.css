@@ -115,6 +115,14 @@ section.container
   height: 35px;
 }
 
+section.container
+  div.calculadora-gorjeta
+  div.comandos
+  div.tipo-porcentagem
+  input.focus {
+  border: 2px solid var(--strong-cyan);
+}
+
 
 section.container div.calculadora-gorjeta div.display {
   background: var(--very-dark-cyan);
