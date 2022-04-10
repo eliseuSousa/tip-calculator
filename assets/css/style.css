@@ -36,6 +36,12 @@ section.container div.calculadora-gorjeta div.comandos div.bill img.logo-dolar, 
   top: 32px;
 }
 
+section.container div.calculadora-gorjeta div.comandos div.numero-pessoas div.legenda-input {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
 section.container div.calculadora-gorjeta div.comandos div.bill,
 div.tipo-porcentagem {
   margin-bottom: 25px;

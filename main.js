@@ -55,20 +55,26 @@ qtdPessoas.addEventListener("blur", function() {
 
   // Regex para caracteres alfabéticos:
   const exp2 = /^[a-zA-Z]+$/g;
+
   if (qtdPessoas.value == 0) {
-    avisoErro("Con't be zero")
-    console.log("Con't be zero");
+    avisoErro("Con't be zero");
+    return;
   }
+
   if (exp1.test(qtdPessoas.value) || exp2.test(qtdPessoas.value)) {
-    avisoErro("Only positive values")
-    console.log("Only positive values");
+    avisoErro("Only positive values");
+    return;
   }
+
+  removeAviso();
 })
 
 
 function avisoErro(mensagem) {
-  let numeroPessoas = document.querySelector(".numero-pessoas");
+  let legendaInput = document.querySelector(".legenda-input");
   let inputNumeroPessoas = document.querySelector("#input-numero-pessoas");
+
+  removeAviso();
 
   let mensagemAviso = document.createElement("span");
 
@@ -77,7 +83,19 @@ function avisoErro(mensagem) {
   mensagemAviso.setAttribute("class", "mensagem-erro");
   inputNumeroPessoas.setAttribute("class", "campo-input campo-invalido");
 
-  numeroPessoas.appendChild(mensagemAviso);
+  legendaInput.appendChild(mensagemAviso);
+
+  return;
+}
+
+function removeAviso() {
+  let legenda = document.querySelector(".legenda-input");
+  let inputNumeroPessoas = document.querySelector("#input-numero-pessoas");
+
+  if (legenda.childElementCount > 1) {
+    legenda.removeChild(legenda.children[1]);
+    inputNumeroPessoas.setAttribute("class", "campo-input");
+  }
 
   return;
 }
