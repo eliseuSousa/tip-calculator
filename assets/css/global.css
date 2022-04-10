@@ -51,3 +51,14 @@ html {
 .porcentagem-custom {
   text-align: left;
 }
+
+.mensagem-erro {
+  position: absolute;
+  top: 5px;
+  left: 195px;
+  color: red;
+}
+
+.campo-invalido {
+  border: 2px solid red;
+}

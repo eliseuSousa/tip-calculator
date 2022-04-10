@@ -47,20 +47,39 @@ function removeFocusButton() {
   }
 }
 
-const numeroPessoas = document.querySelector("#input-numero-pessoas");
+const qtdPessoas = document.querySelector("#input-numero-pessoas");
 
-numeroPessoas.addEventListener("blur", function() {
+qtdPessoas.addEventListener("blur", function() {
   // Regex para números inteiros negativos:
   const exp1 = /^-\d+$/g;
 
   // Regex para caracteres alfabéticos:
   const exp2 = /^[a-zA-Z]+$/g;
-  if (numeroPessoas.value == 0) {
+  if (qtdPessoas.value == 0) {
+    avisoErro("Con't be zero")
     console.log("Con't be zero");
   }
-  if (exp1.test(numeroPessoas.value) || exp2.test(numeroPessoas.value)) {
+  if (exp1.test(qtdPessoas.value) || exp2.test(qtdPessoas.value)) {
+    avisoErro("Only positive values")
     console.log("Only positive values");
   }
 })
+
+
+function avisoErro(mensagem) {
+  let numeroPessoas = document.querySelector(".numero-pessoas");
+  let inputNumeroPessoas = document.querySelector("#input-numero-pessoas");
+
+  let mensagemAviso = document.createElement("span");
+
+  mensagemAviso.innerHTML = mensagem;
+
+  mensagemAviso.setAttribute("class", "mensagem-erro");
+  inputNumeroPessoas.setAttribute("class", "campo-input campo-invalido");
+
+  numeroPessoas.appendChild(mensagemAviso);
+
+  return;
+}
 
 
