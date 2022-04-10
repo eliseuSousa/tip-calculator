@@ -36,8 +36,9 @@ html {
   font-size: 1.6rem;
   font-weight: 700;
   padding: 4px 8px;
-  width: 100%;
+  text-align: end;
   transition: all 0.3s;
+  width: 100%;
 }
 .campo-input:hover {
   border: 2px solid var(--strong-cyan);
@@ -45,4 +46,8 @@ html {
 
 .campo-input:focus {
   outline: 0;
+}
+
+.porcentagem-custom {
+  text-align: left;
 }

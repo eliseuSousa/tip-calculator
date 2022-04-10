@@ -51,6 +51,7 @@ section.container
   div.calculadora-gorjeta
   div.comandos
   div.tipo-porcentagem
+  ul.porcentagens
   li.porcentagem {
   list-style-type: none;
   margin-right: 15px;
@@ -61,6 +62,7 @@ section.container
   div.calculadora-gorjeta
   div.comandos
   div.tipo-porcentagem
+  ul.porcentagens
   li.porcentagem:nth-child(3n) {
   margin-right: 0px;
 }
@@ -77,6 +79,8 @@ section.container
   div.calculadora-gorjeta
   div.comandos
   div.tipo-porcentagem
+  ul.porcentagens
+  li.porcentagem
   button.botao {
   border: none;
   border-radius: 5px;
@@ -92,6 +96,8 @@ section.container
   div.calculadora-gorjeta
   div.comandos
   div.tipo-porcentagem
+  ul.porcentagens
+  li.porcentagem
   button.padrao {
   color: var(--white);
   background: var(--very-dark-cyan);
@@ -101,6 +107,19 @@ section.container
   div.calculadora-gorjeta
   div.comandos
   div.tipo-porcentagem
+  ul.porcentagens
+  li.porcentagem
+  button.padrao:hover {
+    background: var(--strong-cyan);
+    color: var(--very-dark-cyan);
+}
+
+section.container
+  div.calculadora-gorjeta
+  div.comandos
+  div.tipo-porcentagem
+  ul.porcentagens
+  li.porcentagem
   button.focus {
   background: var(--strong-cyan);
   color: var(--very-dark-cyan);
@@ -110,6 +129,8 @@ section.container
   div.calculadora-gorjeta
   div.comandos
   div.tipo-porcentagem
+  ul.porcentagens
+  li.porcentagem
   input.porcentagem-custom {
   width: 90px;
   height: 35px;
@@ -119,6 +140,8 @@ section.container
   div.calculadora-gorjeta
   div.comandos
   div.tipo-porcentagem
+  ul.porcentagens
+  li.porcentagem
   input.focus {
   border: 2px solid var(--strong-cyan);
 }

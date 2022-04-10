@@ -37,3 +37,12 @@ function removeFocusButton() {
     button.setAttribute("class", "botao padrao");
   }
 }
+
+jQuery(function() {
+    
+  jQuery("#bill").maskMoney({ 
+	thousands:'.', 
+	decimal:','
+})
+
+});
