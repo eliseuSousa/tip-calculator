@@ -1,3 +1,12 @@
+jQuery(function() {
+    
+  jQuery("#bill").maskMoney({ 
+	thousands:'.', 
+	decimal:','
+})
+
+});
+
 let porcentagens = document.querySelector(".porcentagens");
 let buttons = document.querySelectorAll(".porcentagem > button");
 
@@ -38,11 +47,20 @@ function removeFocusButton() {
   }
 }
 
-jQuery(function() {
-    
-  jQuery("#bill").maskMoney({ 
-	thousands:'.', 
-	decimal:','
+const numeroPessoas = document.querySelector("#input-numero-pessoas");
+
+numeroPessoas.addEventListener("blur", function() {
+  // Regex para números inteiros negativos:
+  const exp1 = /^-\d+$/g;
+
+  // Regex para caracteres alfabéticos:
+  const exp2 = /^[a-zA-Z]+$/g;
+  if (numeroPessoas.value == 0) {
+    console.log("Con't be zero");
+  }
+  if (exp1.test(numeroPessoas.value) || exp2.test(numeroPessoas.value)) {
+    console.log("Only positive values");
+  }
 })
 
-});
+
