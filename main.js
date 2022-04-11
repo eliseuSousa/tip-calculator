@@ -6,6 +6,7 @@
   const qtdPessoas = document.querySelector("#input-numero-pessoas");
   const  legendaInput = document.querySelector(".legenda-input");
   const  inputNumeroPessoas = document.querySelector("#input-numero-pessoas");
+  const botaoReset = document.querySelector("#reset");
 
   jQuery(function() {
     
@@ -45,12 +46,22 @@
   
     removeAviso();
   })
+
+  botaoReset.addEventListener("click", () => {
+    let camposInputs = document.querySelectorAll(".campo-input");
+    removeFocusButton();
+    buttons[0].setAttribute("class", "botao focus");
+    camposInputs.forEach((input) => {
+      input.value = '';
+    });
+  });
   
   function addFocusInput() {
     input.setAttribute("class", "campo-input porcentagem-custom focus");
   }
   
   function removeFocusInput() {
+    input.value="";
     input.setAttribute("class", "campo-input porcentagem-custom");
   }
   
