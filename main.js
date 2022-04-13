@@ -1,11 +1,14 @@
 (() => {
 
+  const camposInputs = document.querySelectorAll(".campo-input");
   const  porcentagens = document.querySelector(".porcentagens");
   const  buttons = document.querySelectorAll(".porcentagem > button");
   const  input = document.querySelector(".porcentagem > input");
   const qtdPessoas = document.querySelector("#input-numero-pessoas");
+  const porcentagemSelecionada = document.querySelector(".focus").value;
   const  legendaInput = document.querySelector(".legenda-input");
-  const  inputNumeroPessoas = document.querySelector("#input-numero-pessoas");
+  const tipAmount = document.querySelector(".tip-amount");
+  const totalPorPessoa = document.querySelector(".valor-total");
   const botaoReset = document.querySelector("#reset");
 
   jQuery(function() {
@@ -45,15 +48,17 @@
     }
   
     removeAviso();
+    calculaGorjeta();
   })
 
   botaoReset.addEventListener("click", () => {
-    let camposInputs = document.querySelectorAll(".campo-input");
     removeFocusButton();
     buttons[0].setAttribute("class", "botao focus");
     camposInputs.forEach((input) => {
       input.value = '';
     });
+    tipAmount.innerHTML = '$0.00';
+    totalPorPessoa.innerHTML = '$0.00';
   });
   
   function addFocusInput() {
@@ -105,5 +110,12 @@
     }
   
     return;
-  }  
+  }
+  
+  function calculaGorjeta() {
+    const gorjeta = parseFloat(porcentagemSelecionada)/100*parseFloat(camposInputs[0].value).toFixed(2);
+    const valorPorPessoa = gorjeta/parseInt(qtdPessoas.value).toFixed(2);
+    tipAmount.innerHTML = `$${gorjeta}`;
+    totalPorPessoa.innerHTML = `$${valorPorPessoa}`;
+  }
 })();
