@@ -238,3 +238,24 @@ section.container div.calculadora-gorjeta div.display button.botao-reset {
 section.container div.calculadora-gorjeta div.display button.botao-reset:hover {
   background: var(--light-grayish-cyan);
 }
+
+
+@media screen and (max-width: 425px){
+  section.container {
+    justify-content: end;
+  }
+  section.container img.logo {
+    width: 87px;
+    height: 54px;
+  }
+  section.container div.calculadora-gorjeta {
+    align-items: center;
+    border-radius: 24px;
+    flex-direction: column;
+    width: 100%;
+  }
+  section.container div.calculadora-gorjeta div.comandos {
+    margin-bottom: 30px;
+    margin-right: 0px;
+  }
+}
