@@ -243,6 +243,9 @@ section.container div.calculadora-gorjeta div.display button.botao-reset:hover {
 @media screen and (max-width: 425px){
   section.container {
     justify-content: end;
+    height: auto;
+    padding-top: 45px;
+    width: auto;
   }
   section.container img.logo {
     width: 87px;
