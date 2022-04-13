@@ -48,7 +48,7 @@
     }
   
     removeAviso();
-    calculaGorjeta();
+    calculaGorjeta()
   })
 
   botaoReset.addEventListener("click", () => {
@@ -96,7 +96,7 @@
     mensagemAviso.innerHTML = mensagem;
   
     mensagemAviso.setAttribute("class", "mensagem-erro");
-    inputNumeroPessoas.setAttribute("class", "campo-input campo-invalido");
+    qtdPessoas.setAttribute("class", "campo-input campo-invalido");
   
     legendaInput.appendChild(mensagemAviso);
   
@@ -106,7 +106,7 @@
   function removeAviso() {
     if (legendaInput.childElementCount > 1) {
       legendaInput.removeChild(legendaInput.children[1]);
-      inputNumeroPessoas.setAttribute("class", "campo-input");
+      qtdPessoas.setAttribute("class", "campo-input");
     }
   
     return;
