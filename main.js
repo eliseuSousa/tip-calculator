@@ -62,30 +62,30 @@
   });
   
   function addFocusInput() {
-    input.setAttribute("class", "campo-input porcentagem-custom focus");
+    input.classList.add('focus');
   }
   
   function removeFocusInput() {
     input.value="";
-    input.setAttribute("class", "campo-input porcentagem-custom");
+    input.classList.remove('focus')
   }
-  
+
   function addFocusButton() {
-    buttons.forEach(function (key) {
-      key.addEventListener("click", function () {
-        removeFocusButton();
-        this.setAttribute("class", "botao focus");
-      });
-    });  
+    buttons.forEach((button) => {
+      button.classList.remove('focus');
+      this.classList.add('focus');
+    })
   }
-  
+
   function removeFocusButton() {
-    let button;
-    for (let i = 0; i < buttons.length; i++) {
-      button = buttons[i];
-      button.setAttribute("class", "botao padrao");
-    }
+    buttons.forEach((button) => {
+      button.classList.remove('focus');
+    })
   }
+
+  buttons.forEach((button) => {
+    button.addEventListener('click', addFocusButton);
+  })
   
   function avisoErro(mensagem) {
 
@@ -115,7 +115,7 @@
   function calculaGorjeta() {
     const gorjeta = parseFloat(porcentagemSelecionada)/100*parseFloat(camposInputs[0].value).toFixed(2);
     const valorPorPessoa = gorjeta/parseInt(qtdPessoas.value).toFixed(2);
-    tipAmount.innerHTML = `$${gorjeta}`;
-    totalPorPessoa.innerHTML = `$${valorPorPessoa}`;
+    tipAmount.innerHTML = `$${gorjeta.toFixed(2)}`;
+    totalPorPessoa.innerHTML = `$${valorPorPessoa.toFixed(2)}`;
   }
 })();
