@@ -23,9 +23,10 @@
   porcentagens.addEventListener("click", (event) => {
     if (event.target == document.querySelector(".porcentagem-custom")) {
       removeFocusButton();
-      addFocusInput();
+      input.classList.add('focus');
     } else {
-      removeFocusInput();
+      input.classList.remove('focus');
+      input.value="";
       addFocusButton();
     }
   });
@@ -61,15 +62,6 @@
     totalPorPessoa.innerHTML = '$0.00';
   });
   
-  function addFocusInput() {
-    input.classList.add('focus');
-  }
-  
-  function removeFocusInput() {
-    input.value="";
-    input.classList.remove('focus')
-  }
-
   function addFocusButton() {
     buttons.forEach((button) => {
       button.classList.remove('focus');
