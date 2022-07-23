@@ -55,6 +55,8 @@
   botaoReset.addEventListener("click", () => {
     
     removeFocusButton();
+
+    removeAviso();
     
     if (!buttons[0].classList[2]) {
       buttons[0].classList.add('focus');
@@ -63,6 +65,7 @@
     if (input.classList[2]) {
       input.classList.remove('focus');
     }
+
     camposInputs.forEach((input) => {
       input.value = '';
     });

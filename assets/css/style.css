@@ -1,11 +1,8 @@
 section.container {
   align-items: center;
-  background-color: var(--light-grayish-cyan);
   display: flex;
   flex-direction: column;
   justify-content: center;
-  min-height: 100vh;
-  min-width: 100vw;
 }
 
   img.logo {
@@ -124,6 +121,7 @@ section.container {
 
         button.botao-reset:hover {
           background: var(--light-grayish-cyan);
+          cursor: pointer;
         }
     
       div.display-dados {
@@ -162,7 +160,6 @@ section.container {
   section.container {
     justify-content: end;
     height: auto;
-    padding-top: 45px;
     width: auto;
   }
   section.container img.logo {
