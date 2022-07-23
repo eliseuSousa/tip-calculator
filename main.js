@@ -21,7 +21,7 @@
   });
   
   porcentagens.addEventListener("click", (event) => {
-    if (event.target == document.querySelector(".porcentagem-custom")) {
+    if (event.target == input) {
       removeFocusButton();
       input.classList.add('focus');
     } else {
@@ -53,13 +53,23 @@
   })
 
   botaoReset.addEventListener("click", () => {
+    
     removeFocusButton();
-    buttons[0].setAttribute("class", "botao focus");
+    
+    if (!buttons[0].classList[2]) {
+      buttons[0].classList.add('focus');
+    }
+
+    if (input.classList[2]) {
+      input.classList.remove('focus');
+    }
     camposInputs.forEach((input) => {
       input.value = '';
     });
+
     tipAmount.innerHTML = '$0.00';
     totalPorPessoa.innerHTML = '$0.00';
+
   });
   
   function addFocusButton() {
@@ -91,8 +101,6 @@
     qtdPessoas.setAttribute("class", "campo-input campo-invalido");
   
     legendaInput.appendChild(mensagemAviso);
-  
-    return;
   }
   
   function removeAviso() {
@@ -100,8 +108,6 @@
       legendaInput.removeChild(legendaInput.children[1]);
       qtdPessoas.setAttribute("class", "campo-input");
     }
-  
-    return;
   }
   
   function calculaGorjeta() {
@@ -110,4 +116,5 @@
     tipAmount.innerHTML = `$${gorjeta.toFixed(2)}`;
     totalPorPessoa.innerHTML = `$${valorPorPessoa.toFixed(2)}`;
   }
+
 })();
