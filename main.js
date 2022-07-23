@@ -25,9 +25,9 @@
       removeFocusButton();
       input.classList.add('focus');
     } else {
+      addFocusButton(event);
       input.classList.remove('focus');
       input.value="";
-      addFocusButton();
     }
   });
 
@@ -69,15 +69,7 @@
 
     tipAmount.innerHTML = '$0.00';
     totalPorPessoa.innerHTML = '$0.00';
-
   });
-  
-  function addFocusButton() {
-    buttons.forEach((button) => {
-      button.classList.remove('focus');
-      this.classList.add('focus');
-    })
-  }
 
   function removeFocusButton() {
     buttons.forEach((button) => {
@@ -85,9 +77,15 @@
     })
   }
 
-  buttons.forEach((button) => {
-    button.addEventListener('click', addFocusButton);
-  })
+  function addFocusButton(event) {
+    removeFocusButton();
+    buttons.forEach((button) => {
+      if (event.target == button) {
+        button.classList.add('focus');
+        return;         
+      }
+    });
+  }
   
   function avisoErro(mensagem) {
 
