@@ -60,11 +60,3 @@ body {
 .porcentagem-custom {
   text-align: left;
 }
-
-.mensagem-erro {
-  color: red;
-}
-
-.campo-invalido {
-  border: 2px solid red;
-}

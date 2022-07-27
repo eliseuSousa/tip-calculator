@@ -1,10 +1,12 @@
 (() => {
-
+  const valorDaCompra = parseFloat(document.querySelector("#bill").value);
   const camposInputs = document.querySelectorAll(".campo-input");
   const  porcentagens = document.querySelector(".porcentagens");
   const  buttons = document.querySelectorAll(".porcentagem > button");
   const  input = document.querySelector(".porcentagem > input");
-  const qtdPessoas = document.querySelector("#input-numero-pessoas");
+  const inputQtdPessoas = document.querySelector("#input-numero-pessoas");
+  const qtdPessoas = parseFloat(document.querySelector("#input-numero-pessoas").value);
+  const form = document.querySelector(".formulario");
   const porcentagemSelecionada = document.querySelector(".focus").value;
   const  legendaInput = document.querySelector(".legenda-input");
   const tipAmount = document.querySelector(".tip-amount");
@@ -31,26 +33,10 @@
     }
   });
 
-  qtdPessoas.addEventListener("blur", () => {
-    // Regex para números inteiros negativos:
-    const exp1 = /^-\d+$/g;
-  
-    // Regex para caracteres alfabéticos:
-    const exp2 = /^[a-zA-Z]+$/g;
-  
-    if (qtdPessoas.value == 0) {
-      avisoErro("Con't be zero");
-      return;
-    }
-  
-    if (exp1.test(qtdPessoas.value) || exp2.test(qtdPessoas.value)) {
-      avisoErro("Only positive values");
-      return;
-    }
-  
-    removeAviso();
-    calculaGorjeta()
-  })
+  form.addEventListener("submit", (event) => {
+    event.preventDefault();
+    calculaGorjeta();
+  });
 
   botaoReset.addEventListener("click", () => {
     
@@ -90,30 +76,10 @@
     });
   }
   
-  function avisoErro(mensagem) {
-
-    removeAviso();
-  
-    let mensagemAviso = document.createElement("span");
-  
-    mensagemAviso.innerHTML = mensagem;
-  
-    mensagemAviso.setAttribute("class", "mensagem-erro");
-    qtdPessoas.setAttribute("class", "campo-input campo-invalido");
-  
-    legendaInput.appendChild(mensagemAviso);
-  }
-  
-  function removeAviso() {
-    if (legendaInput.childElementCount > 1) {
-      legendaInput.removeChild(legendaInput.children[1]);
-      qtdPessoas.setAttribute("class", "campo-input");
-    }
-  }
-  
   function calculaGorjeta() {
-    const gorjeta = parseFloat(porcentagemSelecionada)/100*parseFloat(camposInputs[0].value).toFixed(2);
-    const valorPorPessoa = gorjeta/parseInt(qtdPessoas.value).toFixed(2);
+
+    const gorjeta = parseFloat(porcentagemSelecionada)/100*valorDaCompra.toFixed(2);
+    const valorPorPessoa = gorjeta/qtdPessoas.toFixed(2);
     tipAmount.innerHTML = `$${gorjeta.toFixed(2)}`;
     totalPorPessoa.innerHTML = `$${valorPorPessoa.toFixed(2)}`;
   }
